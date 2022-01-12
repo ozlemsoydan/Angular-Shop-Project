@@ -14,7 +14,6 @@ export class CategoryComponent implements OnInit {
   constructor(private categoryService: CategoryService,
     private toastr: ToastrService) { }
   title = "Kategori Listesi"
-  filterText = ""
   categories: Category[]=[];
 
   ngOnInit() {

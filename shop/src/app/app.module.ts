@@ -10,6 +10,7 @@ import { ProdutFilterPipe } from './product/produt-filter.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductAddForms1Component } from './product/product-add-forms1/product-add-forms1.component';
 
 
 
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     CategoryComponent,
     ProductComponent,
     ProdutFilterPipe,
+    ProductAddForms1Component,
   ],
   imports: [
     BrowserModule,
