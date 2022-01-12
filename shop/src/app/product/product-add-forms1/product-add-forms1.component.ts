@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { Category } from 'src/app/category/category';
 import { CategoryService } from 'src/app/services/category.service';
 import { ProductService } from 'src/app/services/product.service';
@@ -13,7 +14,7 @@ import { Product } from '../product';
 })
 export class ProductAddForms1Component implements OnInit {
 
-  constructor(private categoryService:CategoryService) { }
+  constructor(private categoryService:CategoryService, private productService:ProductService, private toastr: ToastrService) { }
 
   model: Product = new Product();
   categories: Category[]=[];
@@ -25,7 +26,13 @@ export class ProductAddForms1Component implements OnInit {
   }
 
   add(Form: NgForm){
-console.log(Form.value.name);
+    debugger
+    this.productService.addProduct(this.model).subscribe(data=>{
+      this.toastr.success(this.model.name+" başarıyla eklendi.")
+    }, error => {
+      this.toastr.error("Bir hata oluştu");
+  });
   }
 
+ 
 }

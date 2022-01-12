@@ -7,7 +7,7 @@
   </div>
 
     <div class="row">
-        <div *ngFor="let product of products" class="productbox" style="width: 18rem;">
+        <div *ngFor="let product of products" class="productbox" >
             <img class="card-img-top" [src]="product.imageUrl" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{product.name}} {{product.price | currency:'TRY ':false:"1.2-2"}}</h5>
