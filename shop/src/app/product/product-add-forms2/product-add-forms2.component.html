@@ -1,0 +1,48 @@
+<h3>Yeni Ürün Ekle- Reactive</h3>
+<form [formGroup]="productAddForm" (ngSubmit)="add()">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+
+                <div>
+                    <input type="text" class="form-control mb-3" id="name" name="name" formControlName="name"
+                        placeholder="Ürün Adı">
+
+                </div>
+
+
+                <div>
+                    <input type="text" class="form-control mb-3" id="description" name="description"
+                        formControlName="description" placeholder="Açıklama">
+
+                </div>
+
+
+                <div>
+                    <input class="form-control mb-3" type="text" id="imageUrl" name="imageUrl"
+                        formControlName="imageUrl" placeholder="Ürünün Fotoğrafı">
+                </div>
+
+                <div>
+                    <input class="form-control mb-3" type="text" id="price" name="price" formControlName="price"
+                        placeholder="Ürünün Fiyatı">
+                </div>
+
+                <div>
+                    <select class="form-control mb-3" formControlName="categoryId" name="categoryId" id="categoryId"
+                        required>
+                        <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+                    </select>
+
+                </div>
+            </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary mb-3" [disabled]="productAddForm.invalid">Ürün
+            Ekle</button>
+    </div>
+
+
+</form>

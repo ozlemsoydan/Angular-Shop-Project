@@ -26,7 +26,6 @@ export class ProductAddForms1Component implements OnInit {
   }
 
   add(Form: NgForm){
-    debugger
     this.productService.addProduct(this.model).subscribe(data=>{
       this.toastr.success(this.model.name+" başarıyla eklendi.")
     }, error => {
